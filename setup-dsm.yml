@@ -1,0 +1,16 @@
+- name: setup local dsm server
+  hosts: dsm
+  sudo: True
+  tasks:
+    - name: Copy Linux Installer
+      copy: src=files/Manager-Linux-9.6.3177.x64.sh dest=/home/vagrant/Manager-Linux-9.6.3177.x64.sh mode="u+x,o+x"
+
+    - name: copy ds properties file to guest
+      copy: src=files/ds.properties dest=/home/vagrant/ds.properties
+
+    - name: Initiate DSM install [this can take awhile]
+      sudo: True
+      shell: /home/vagrant/Manager-Linux-9.6.3177.x64.sh -q -console -varfile /home/vagrant/ds.properties
+
+    # start dsm_s service if not running
+    - service: name=dsm_s state=started
