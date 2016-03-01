@@ -2,18 +2,21 @@ deep-security-local-demo
 ======
 Ansible playbook to create a local DSM linux demo environment with Vagrant.
 
-#Requirements
+## Requirements ##
 Ansible
 Vagrant
 VirtualBox
 
 
-## Usage
+## Usage ##
 
 Initial TODOs
+
 1. update ds.properties with you license key, username, and password
 2. update setup-dsm.yml with the location to the DSM linux installer Manager-Linux-9.6.3177.x64.sh.
    The playbook is currently set up to locate this file in the files dir.
+
+
 
 ```code
 
@@ -39,7 +42,7 @@ Initial TODOs
 
 
   ##Step 5
-  your are done nooo. use "vagrant ssh" to access your environment
+  you are done nooo. use "vagrant ssh" to access your environment
 
 
 ```
